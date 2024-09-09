@@ -18,10 +18,12 @@ struct Welcome: View {
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.all)
+            
                 VStack() {
                     Text("Welcome to Tapper!")
                         .font(.custom(font, size: 35))
                         .foregroundStyle(.darkerBlue)
+                        .fontWeight(.bold)
                     Spacer()
                         .frame(height: 70)
                     Text(" We are here to accompany you on your journey to finding peace. Our app offers a variety of tools and resources to help you manage anxiety, relieve stress, and improve your overall well-being. ")
@@ -30,16 +32,18 @@ struct Welcome: View {
                         .multilineTextAlignment(.center)
                         .lineSpacing(6.0)
                         .padding()
+                        .fontWeight(.semibold)
                     Spacer()
                         .frame(height: 100)
                     NavigationLink ("Let's get started"){
-                        Preferences()
+                        ContentView()
                     }
                         .padding(18)
                         .font(.custom(font, size: 30))
                         .foregroundStyle(.white)
                         .background(.darkBlue)
                         .clipShape(RoundedRectangle(cornerRadius: 7))
+                        .fontWeight(.bold)
                 }
                 .padding(16)
             }

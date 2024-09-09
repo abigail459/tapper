@@ -9,13 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Comfort()
+                .tabItem {
+                    Label("Comfort", systemImage: "leaf.fill")
+                }
+            Sounds()
+                .tabItem {
+                    Label("Sounds", systemImage: "music.quarternote.3")
+                }
+            Tracker()
+                .tabItem {
+                    Label("Tracker", systemImage: "circle.hexagonpath")
+                }
         }
-        .padding()
+        .toolbar {
+            NavigationLink(destination: Settings()) {
+                Image(systemName: "person.crop.circle")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .tint(.darkerBlue)
+            }
+        }
+        .tint(.what)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
