@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Comfort", systemImage: "leaf.fill")
                 }
-            Sounds()
+            SoundsHome()
                 .tabItem {
                     Label("Sounds", systemImage: "music.quarternote.3")
                 }
