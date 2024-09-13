@@ -14,7 +14,8 @@
 		D149BEAB2C40D90E00AF0B21 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D149BEAA2C40D90E00AF0B21 /* Preview Assets.xcassets */; };
 		D18579E52C44E0D1004F8A83 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18579E42C44E0D1004F8A83 /* Welcome.swift */; };
 		D18579E72C44F14E004F8A83 /* Comfort.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18579E62C44F14E004F8A83 /* Comfort.swift */; };
-		D1D162222C7C4087002DD3FE /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D162212C7C4087002DD3FE /* Sounds.swift */; };
+		D1C1C25E2C93DEF200E9AD6A /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1C25D2C93DEF200E9AD6A /* Sounds.swift */; };
+		D1D162222C7C4087002DD3FE /* SoundsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D162212C7C4087002DD3FE /* SoundsHome.swift */; };
 		D1D162262C7C4104002DD3FE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D162252C7C4104002DD3FE /* Tracker.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +28,8 @@
 		D149BEAA2C40D90E00AF0B21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D18579E42C44E0D1004F8A83 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		D18579E62C44F14E004F8A83 /* Comfort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comfort.swift; sourceTree = "<group>"; };
-		D1D162212C7C4087002DD3FE /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		D1C1C25D2C93DEF200E9AD6A /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		D1D162212C7C4087002DD3FE /* SoundsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsHome.swift; sourceTree = "<group>"; };
 		D1D162252C7C4104002DD3FE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +67,8 @@
 				D149BEA52C40D90B00AF0B21 /* ContentView.swift */,
 				D18579E42C44E0D1004F8A83 /* Welcome.swift */,
 				D18579E62C44F14E004F8A83 /* Comfort.swift */,
-				D1D162212C7C4087002DD3FE /* Sounds.swift */,
+				D1D162212C7C4087002DD3FE /* SoundsHome.swift */,
+				D1C1C25D2C93DEF200E9AD6A /* Sounds.swift */,
 				D1D162252C7C4104002DD3FE /* Tracker.swift */,
 				D10723362C7444F1009C6F57 /* Settings.swift */,
 				D149BEA72C40D90E00AF0B21 /* Assets.xcassets */,
@@ -155,7 +158,8 @@
 				D149BEA62C40D90B00AF0B21 /* ContentView.swift in Sources */,
 				D18579E52C44E0D1004F8A83 /* Welcome.swift in Sources */,
 				D18579E72C44F14E004F8A83 /* Comfort.swift in Sources */,
-				D1D162222C7C4087002DD3FE /* Sounds.swift in Sources */,
+				D1D162222C7C4087002DD3FE /* SoundsHome.swift in Sources */,
+				D1C1C25E2C93DEF200E9AD6A /* Sounds.swift in Sources */,
 				D149BEA42C40D90B00AF0B21 /* TapperApp.swift in Sources */,
 				D10723372C7444F1009C6F57 /* Settings.swift in Sources */,
 				D1D162262C7C4104002DD3FE /* Tracker.swift in Sources */,
@@ -292,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tapper/Preview Content\"";
+				DEVELOPMENT_TEAM = 593Q9NC9KF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -299,6 +304,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tapper/Preview Content\"";
+				DEVELOPMENT_TEAM = 593Q9NC9KF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -327,6 +334,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

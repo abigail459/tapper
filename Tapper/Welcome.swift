@@ -44,6 +44,7 @@ struct Welcome: View {
                         .background(.darkBlue)
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                         .fontWeight(.bold)
+                        .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 2)
                 }
                 .padding(16)
             }
