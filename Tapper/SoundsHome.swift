@@ -36,24 +36,16 @@ struct SoundsHome: View {
             ZStack{
                 Image("welcome")
                 VStack (spacing: 15) {
-//                    HStack{
-//                        EachSound(soundText: "Interactive guided meditation")
-//                        EachSound(soundText: "Nature sounds")
-//                    }
-//                    HStack{
-//                        EachSound(soundText: "White noise")
-//                        EachSound(soundText: "Soft music")
-//                    }
-//                    HStack{
-//                        EachSound(soundText: "Binaural sounds")
-//                        EachSound(soundText: "Custom music")
-//                    }
-                    EachSound(soundText: "Interactive guided meditation")
-                    EachSound(soundText: "Nature sounds")
-                    EachSound(soundText: "White noise")
-                    EachSound(soundText: "Soft music")
-                    EachSound(soundText: "Biaural sounds")
-                    EachSound(soundText: "Custom music")
+
+                    ForEach(Selection.allCases, id: \.self) { sound in
+                        EachSound(soundText: sound)
+                    }
+//                    EachSound(soundText: Selection.one)
+//                    EachSound(soundText: "Nature sounds")
+//                    EachSound(soundText: "White noise")
+//                    EachSound(soundText: "Soft music")
+//                    EachSound(soundText: "Biaural sounds")
+//                    EachSound(soundText: "Custom music")
                     Spacer()
                         .frame(height:200)
                 }
@@ -62,14 +54,14 @@ struct SoundsHome: View {
             
         }
         .navigationDestination(for: Selection.self) { button in
-            Sounds(sound: Selection.one)
+            Sounds(sound: button)
         }
     }
     
-    func EachSound(soundText: String) -> some View {
+    func EachSound(soundText: Selection) -> some View {
         NavigationLink(value: soundText) {
             HStack {
-                Text("\(soundText)")
+                Text("\(soundText.string)")
                     .minimumScaleFactor(0.2)
                     .font(.system(size: 140))
                     .bold()
