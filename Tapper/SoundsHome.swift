@@ -5,7 +5,7 @@
 //  Created by Abigail Lau on 26/8/24.
 //
 
-// sound credit: https://www.chosic.com/free-music/nature/
+// sound credit:<a href="https://www.vecteezy.com/free-videos/forest-loop">Forest Loop Stock Videos by Vecteezy</a>
 
 import SwiftUI
 
@@ -15,7 +15,7 @@ enum Selection: CaseIterable, Codable {
     var string: String {
         switch self {
         case .one:
-            return "Interactive guided meditation"
+            return "Guided meditation"
         case .two:
             return "Nature sounds"
         case .three:
@@ -33,54 +33,37 @@ enum Selection: CaseIterable, Codable {
 struct SoundsHome: View {
     var body: some View {
         NavigationStack {
-            ZStack{
+            ZStack {
                 Image("welcome")
-                VStack (spacing: 15) {
-
+                VStack(spacing: 15) {
                     ForEach(Selection.allCases, id: \.self) { sound in
-                        EachSound(soundText: sound)
+                        EachSound(selection: sound)
                     }
-//                    EachSound(soundText: Selection.one)
-//                    EachSound(soundText: "Nature sounds")
-//                    EachSound(soundText: "White noise")
-//                    EachSound(soundText: "Soft music")
-//                    EachSound(soundText: "Biaural sounds")
-//                    EachSound(soundText: "Custom music")
-                    Spacer()
-                        .frame(height:200)
                 }
-                .padding(EdgeInsets(top: 200, leading: 100, bottom: 30, trailing: 100))
             }
-            
-        }
-        .navigationDestination(for: Selection.self) { button in
-            Sounds(sound: button)
         }
     }
     
-    func EachSound(soundText: Selection) -> some View {
-        NavigationLink(value: soundText) {
-            HStack {
-                Text("\(soundText.string)")
-                    .minimumScaleFactor(0.2)
-                    .font(.system(size: 140))
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                    .frame(maxHeight: 20)
-                    
-            }
-            .padding(30)
-            .background(Image("buttonfill"))
-            .foregroundStyle(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 2)
+    func EachSound(selection: Selection) -> some View {
+        NavigationLink {
+            Sounds(sound: selection)
+        } label: {
+            Text(selection.string)
+                .padding(30)
+                .bold()
+                .foregroundStyle(.white)
+                .font(.custom("Arial", size: 140.0))
+                .frame(width: UIScreen.main.bounds.width - 40.0, height: 80)
+                .background(Image("buttonfill").resizable())
+                .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 2)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .lineLimit(1)
+                .minimumScaleFactor(0.2)
         }
-        
         .buttonStyle(.plain)
     }
-
+    
 }
-
 
 #Preview {
     SoundsHome()

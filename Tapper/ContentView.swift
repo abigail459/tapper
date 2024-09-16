@@ -31,7 +31,7 @@ struct ContentView: View {
                     .tint(.darkerBlue)
             }
         }
-        .tint(.what)
+        .tint(.darkerBlue)
         .navigationBarBackButtonHidden(true)
     }
 }

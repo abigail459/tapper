@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D10723372C7444F1009C6F57 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10723362C7444F1009C6F57 /* Settings.swift */; };
+		D149038D2C97FE7400D168BA /* Nature sounds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D149038C2C97FE7400D168BA /* Nature sounds.mp4 */; };
+		D149038F2C97FFC100D168BA /* White noise.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D149038E2C97FFC100D168BA /* White noise.mp4 */; };
 		D149BEA42C40D90B00AF0B21 /* TapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D149BEA32C40D90B00AF0B21 /* TapperApp.swift */; };
 		D149BEA62C40D90B00AF0B21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D149BEA52C40D90B00AF0B21 /* ContentView.swift */; };
 		D149BEA82C40D90E00AF0B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D149BEA72C40D90E00AF0B21 /* Assets.xcassets */; };
@@ -21,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		D10723362C7444F1009C6F57 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D149038B2C97FCB800D168BA /* Nature sounds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nature sounds.mp3"; sourceTree = "<group>"; };
+		D149038C2C97FE7400D168BA /* Nature sounds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nature sounds.mp4"; path = "../../../../Nature sounds.mp4"; sourceTree = "<group>"; };
+		D149038E2C97FFC100D168BA /* White noise.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "White noise.mp4"; path = "../../../../White noise.mp4"; sourceTree = "<group>"; };
 		D149BEA02C40D90B00AF0B21 /* Tapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D149BEA32C40D90B00AF0B21 /* TapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapperApp.swift; sourceTree = "<group>"; };
 		D149BEA52C40D90B00AF0B21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +68,9 @@
 		D149BEA22C40D90B00AF0B21 /* Tapper */ = {
 			isa = PBXGroup;
 			children = (
+				D149038B2C97FCB800D168BA /* Nature sounds.mp3 */,
+				D149038E2C97FFC100D168BA /* White noise.mp4 */,
+				D149038C2C97FE7400D168BA /* Nature sounds.mp4 */,
 				D149BEA32C40D90B00AF0B21 /* TapperApp.swift */,
 				D149BEA52C40D90B00AF0B21 /* ContentView.swift */,
 				D18579E42C44E0D1004F8A83 /* Welcome.swift */,
@@ -143,6 +151,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D149038D2C97FE7400D168BA /* Nature sounds.mp4 in Resources */,
+				D149038F2C97FFC100D168BA /* White noise.mp4 in Resources */,
 				D149BEAB2C40D90E00AF0B21 /* Preview Assets.xcassets in Resources */,
 				D149BEA82C40D90E00AF0B21 /* Assets.xcassets in Resources */,
 			);
