@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Welcome: View {
-    @State private var isActive = false // State variable to control navigation
+    @State private var isActive = false
 
     var body: some View {
         NavigationStack {

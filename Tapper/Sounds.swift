@@ -66,6 +66,7 @@ struct Sounds: View {
     
     init(sound: Selection) {
         self.sound = sound
+        print(sound.string)
         let url = Bundle.main.url(forResource: sound.string, withExtension: "mp4")!
         self.player = AVPlayer(url: url)
         self.player.isMuted = true // Mute the video for background

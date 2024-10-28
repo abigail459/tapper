@@ -8,35 +8,34 @@
 import SwiftUI
 
 struct Comfort: View {
-    @State private var rating = 0
+    @EnvironmentObject var overall: Overall
     @State private var isRatedToday = false
-
+    @State private var showStars = true
     
     private func loadRating() {
-            let currentDate = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd" // Store the rating based on the current day
-            
-            let todayKey = formatter.string(from: currentDate)
-            if let savedRating = UserDefaults.standard.object(forKey: todayKey) as? Int {
-                rating = savedRating
-                isRatedToday = true // Hide rating input if already rated
-            } else {
-                isRatedToday = false
-            }
-        }
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
         
-        private func saveRating() {
-            let currentDate = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            
-            let todayKey = formatter.string(from: currentDate)
-            UserDefaults.standard.set(rating, forKey: todayKey)
-            isRatedToday = true
+        let todayKey = formatter.string(from: currentDate)
+        if let savedRating = UserDefaults.standard.object(forKey: todayKey) as? Double {
+            overall.rating = savedRating
+            isRatedToday = true 
+        } else {
+            isRatedToday = false
         }
-
-
+    }
+    
+    private func saveRating() {
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let todayKey = formatter.string(from: currentDate)
+        UserDefaults.standard.set(overall.rating, forKey: todayKey)
+        isRatedToday = true
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -47,8 +46,9 @@ struct Comfort: View {
                         .font(.custom("Avenir Next Bold", size: 50.0))
                         .foregroundStyle(.darkerBlue)
                         .padding(EdgeInsets(top: isRatedToday == true ? -60 : 70, leading: 0, bottom: -5, trailing: 0))
+                    
                     if !isRatedToday {
-                        if rating == 0 {
+                        if showStars {
                             VStack {
                                 Text("How do you feel today?")
                                     .font(.custom(font, size: 20.0))
@@ -56,14 +56,14 @@ struct Comfort: View {
                                     .bold()
                                 HStack {
                                     ForEach(1..<6) { star in
-                                        Image(systemName: star <= rating ? "star.fill" : "star")
+                                        Image(systemName: Double(star) <= overall.rating ?? 0.0 ? "star.fill" : "star")
                                             .resizable()
                                             .frame(width: 40, height: 40)
-                                            .foregroundStyle(star <= rating ? .darkerBlue : .darkerBlue)
+                                            .foregroundStyle(Double(star) <= overall.rating ?? 0.0 ? .darkerBlue : .darkerBlue)
                                             .onTapGesture {
-                                                rating = star
+                                                overall.rating = Double(star)
                                                 Task {
-                                                    await delaySave()
+                                                    await delaySave() // Delay before showing thank you message
                                                 }
                                             }
                                     }
@@ -150,11 +150,14 @@ struct Comfort: View {
         }
         
     }
+    
+    // Delay before showing "Thank you" message
     func delaySave() async {
-        try? await Task.sleep(nanoseconds: 3_000_000_000)
+        showStars = true // Initially show stars
+        try? await Task.sleep(nanoseconds: 2_000_000_000) // 2-second delay
+        showStars = false // Hide stars and show "Thank you" message
         saveRating()
     }
-        
 }
 
 #Preview {

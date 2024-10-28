@@ -7,7 +7,12 @@
 
 import SwiftUI
 
+class Overall: ObservableObject {
+    @Published var rating: Double? = 0.0
+}
+
 struct ContentView: View {
+    @StateObject private var overall = Overall()
     var body: some View {
         TabView {
             Comfort()
@@ -33,6 +38,7 @@ struct ContentView: View {
         }
         .tint(.darkerBlue)
         .navigationBarBackButtonHidden(true)
+        .environmentObject(overall)
     }
 }
 
